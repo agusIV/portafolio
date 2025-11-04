@@ -11,6 +11,7 @@ const herramientasIzq = document.getElementById("herramientasContenedorIzq")
 const herramientasMed = document.getElementById("herramientasContenedorMed")
 const herramientasDer = document.getElementById("herramientasContenedorDer")
 const pie = document.getElementById("pie")
+const controladorAnimaciones = [false, false, false, false, false]
 
 //document.body.appendChild();
 const tl = gsap.timeline(); // Crear línea de tiempo
@@ -68,10 +69,18 @@ tl
   opacity: 1,
   duration: 0
 })
+.to("#sombra", {
+  opacity: 1,
+  duration: 0
+}, "<")
 .from(cabezera, {
   y:-110,
   duration: 3
 }, "+=1")
+.from("#sombra", {
+  y:-110,
+  duration: 3
+}, "<")
 .add(() => { contenedor.appendChild(personal) },"+=0.1")
 .to(personal, {
   opacity: 1,
@@ -79,62 +88,95 @@ tl
 }, "+=0.1")
 .add(() => { contenedor.appendChild(perfil) }, "+=0.1")
 .add(() => { contenedor.appendChild(educacion) }, "+=0.1")
-
 .to(perfil, {
   opacity: 1,
   duration: 1
 }, "+=0.1")
-.add(() => { contenedor.appendChild(experiencia) }, "+=0.1")
 
-.to(educacion, {
-  opacity: 1,
-  duration: 0
-}, "+=0.1")
-.from(educacion,{
-  x: 800,
-  duration:1
-}, "+=0.1")
-.add(() => { contenedor.appendChild(proyectos) }, "+=0.1")
-.to(experiencia, {
-  opacity: 1,
-  duration: 0
-}, "+=0.1")
-.from(experiencia,{
-  x: -800,
-  duration:1
-}, "+=0.1")
-.add(() => { contenedor.appendChild(herramientas) }, "+=0.1")
-.to(proyectos, {
-  opacity: 1,
-  duration: 1
-}, "+=0.1")
-.add(() => { contenedor.appendChild(pie) }, "+=0.1")
-.to(herramientas, {
-  opacity: 1,
-  duration: 0
-}, "+=0.1")
-.to(herramientasTitulo, {
-  opacity: 1,
-  duration: 1
-}, "+=0.1")
-.from(herramientasMed, {
-  y:500,
-  duration: 1
-}, "<")
-.from(herramientasIzq, {
-  x:-300,
-  duration: 1
-}, "+=0.1")
-.from(herramientasDer, {
-  x: 300,
-  duration: 1
-}, "<")
-.to(pie, {
-  opacity: 1,
-  duration: 0
-}, "+=0.1")
-.from(pie, {
-  x: -500,
-  y: 100,
-  duration: 1
-}, "+=0.1")
+function esperarAVisible(elemento) {
+  return new Promise((resolve) => {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.intersectionRatio >= 0.5) {
+          obs.disconnect()
+          resolve(true)
+        }
+      })
+    },{ threshold: 0.5 })
+    observer.observe(elemento)
+  })
+}
+
+if (await esperarAVisible(educacion)) {
+    tl
+    .add(() => { contenedor.appendChild(experiencia) })
+    .to(educacion, {
+      opacity: 1,
+      duration: 0
+    }, "+=0.1")
+    .from(educacion,{
+      x: 800,
+      duration:1
+    }, "+=0.1")
+    controladorAnimaciones[0] = true      
+}
+if (await esperarAVisible(experiencia)) {
+  tl
+  .add(() => { contenedor.appendChild(proyectos) }, "+=0.1")
+  .to(experiencia, {
+    opacity: 1,
+    duration: 0
+  }, "+=0.1")
+  .from(experiencia,{
+    x: -800,
+    duration:1
+  }, "+=0.1")
+  controladorAnimaciones[1] = true
+}
+if (await esperarAVisible(proyectos)) {
+  tl
+  .add(() => { contenedor.appendChild(herramientas) }, "+=0.1")
+  .to(proyectos, {
+    opacity: 1,
+    duration: 1
+  }, "+=0.1")
+  controladorAnimaciones[2] = true
+}
+  if (await esperarAVisible(herramientas)) {
+  tl
+  .add(() => { contenedor.appendChild(pie) }, "+=0.1")
+  .to(herramientas, {
+    opacity: 1,
+    duration: 0
+  }, "+=0.1")
+  .to(herramientasTitulo, {
+    opacity: 1,
+    duration: 1
+  }, "+=0.1")
+  .from(herramientasMed, {
+    y:500,
+    duration: 1
+  }, "<")
+  .from(herramientasIzq, {
+    x:-300,
+    duration: 1
+  }, "+=0.1")
+  .from(herramientasDer, {
+    x: 300,
+    duration: 1
+  }, "<")
+  controladorAnimaciones[3] = true
+}
+if (await esperarAVisible(pie)) {
+  controladorAnimaciones[4] = true
+  tl
+  .to(pie, {
+    opacity: 1,
+    duration: 0
+  }, "+=0.1")
+  .from(pie, {
+    x: -500,
+    y: 100,
+    duration: 1
+  }, "+=0.1")
+}
