@@ -1,0 +1,213 @@
+@font-face {
+  font-family: 'AnimeAce';
+  src: url('animeace2bb_tt/animeace2_bld.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  font-family: 'AnimeAce', sans-serif;
+  min-height: 100vh;
+}
+h1, h2, h3 {
+  letter-spacing: 1px;
+}
+#contenedor{
+  width: 762px;
+  min-height: 100vh;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+  overflow: hidden;
+}
+#cabezera{
+  background-image: url("marco-distinto-mejorado\ \(1\).png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 758px;
+  height: 100px;
+  margin-top: 10px;
+  z-index: 1000;
+  opacity: 0;
+}
+.navbar{
+  position: absolute;
+  right: 50px;
+  top: 20px;
+}
+.offcanvas{
+  background-color: #F7FDFF;
+  height: 100vh;
+}
+
+#personal{
+  margin-top: 150px;
+  opacity: 0;
+  height: 300px;
+}
+#personalTitulo{
+
+}
+#personalDatos{
+  background-image: url("marco-mediano.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 80%;
+  width: 80%;
+  margin-left: 10%;
+}
+.personalDatos{
+  
+}
+#cabezeraSombra {
+  width: 100%;
+  height: 100px;
+}
+
+
+#perfil{
+  opacity: 0;
+}
+#perfilTitulo{
+  
+}
+#perfilInfo{
+  
+}
+#educacion{
+  background-image: url("marco-sin-derecha.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 95%;
+  margin-left: 5%;
+  opacity: 0;
+}
+.educacionTitulo{
+  display: inline-block;
+  border-bottom: 10px solid transparent;
+  border-image: url('marco-chico.png') 10 stretch;
+}
+.educacionSubTitulo{
+  
+}
+.educacionDatos{
+  
+}
+#experiencia{
+  background-image: url("marco-sin-derecha2.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 95%;
+  margin-left: 4%;
+  opacity: 0;
+}
+#experienciaTitulo{
+  display: inline-block;
+  border-bottom: 10px solid transparent;
+  border-image: url('marco-chico.png') 10 stretch;
+}
+#proyectos{
+  background-image: url("marco-mediano.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 170px;
+  opacity: 0;
+}
+.proyectosLista{
+  
+}
+.proyectosLink{
+  display: inline-block;
+}
+.proyectosLink:hover{
+  border-bottom: 10px solid transparent;
+  border-image: url('marco-chico.png') 10 stretch;
+}
+#herramientasTitulo{
+  opacity: 0;
+}
+.herramientasSubTitulo{
+  display: inline-block;
+  width: 32%;
+}
+#herramientas{
+  width: 100%;
+  height: 500px;
+  margin-left: -10px;
+  opacity: 0;
+}
+#herramientasContenedorIzq{
+  left: 0px;
+  height: 80%;
+  width: 37%;
+}
+#herramientasListaIzq{
+  background-image: url("marco-triple-izq.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+}
+#herramientasContenedorMed{
+  left: 50%;
+  transform: translateX(-50%);
+  height: 80%;
+  width: 37%;
+}
+#herramientasListaMed{
+  background-image: url("marco-triple-med.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 100%;
+}
+#herramientasContenedorDer{
+  height: 100%;
+  right: 0px;
+  width: 37%;
+}
+#herramientasListaDer{
+  background-image: url("marco-triple-der.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: 80%;
+}
+#herramientasTitulo{
+
+}
+#pie{
+  background-image: url("pie.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  margin-left: -10px;
+  width: 100%;
+  opacity: 0;
+}
+
+
+/*
+cielo
+#114A88 fondo principal
+#1559C2
+#1E43FF
+luna
+#5EB2FF otros
+#DEF8FF
+#F7FDFF subfondo1
+kaido
+#1D013D letras
+#8B0BE9 otros
+#52A4F6 subfondo2 principal
+#A2EBFF subfondo2 secundario
+#F3BFA8 subfondo2 terciario
+fuego
+#F2506E subfondo3 te
+#F26B5E subfondo3 se
+#F2B56B subFondo3 pr
+*/
