@@ -4,6 +4,23 @@
   font-weight: normal;
   font-style: normal;
 }
+.stop-scrolling {
+  overflow: hidden;
+}
+.decorarSeccion:hover{
+  cursor: pointer;
+  background-image: url("imagenes/barra\ \(1\).png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 10px;
+}
+.X{
+  background-image: url("X.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
 body {
   font-family: 'AnimeAce', sans-serif;
   min-height: 100vh;
@@ -25,33 +42,72 @@ h1, h2, h3 {
   height: 84px;
   margin-left: 17px;
   margin-top: 18px;
-  z-index: 10;
+  z-index: 1;
+  background-color: white;
 }
 #cabezera{
-  background-image: url("marco-distinto-mejorado\ \(1\).png");
+  overflow: hidden;
+  background-image: url("imagenes/marco-distinto-mejorado\ \(1\).png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 758px;
   height: 100px;
   margin-top: 10px;
-  z-index: 1000;
+  z-index: 2;
   opacity: 0;
 }
-#inicio{
-  
+#seccionCaja{
+  overflow: hidden;
+  height: 70px;
 }
-.navbar{
+#seccion{
+}
+#seccion li{
+  height: 60px;
+}
+#seccion li h1{
+  display: inline-block;
+}
+#botonBarra{
+  background-image: url("imagenes/barras.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: absolute;
   right: 50px;
-  top: 20px;
+  top: 25px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
 }
-.offcanvas{
-  background-color: #F7FDFF;
-  height: 100vh;
+#botonBarra:hover{
+  scale: 1.1;
+}
+#cerrarBarra{
+  opacity: 0;
+  scale: 0;
+  width: 50px;
+  height: 50px;
+  top: 80px; 
+  right: 50px;
+  font-size: 40px;
+  cursor: "none";
+}
+#inicio{
+  opacity: 0;
+  margin-top: 125px;
+}
+#inicioIzq{
+  display: inline-block;
+  width: 150px;
+}
+#inicioDer{
+  display: inline-block;
+  width: 150px;
 }
 #personal{
-  margin-top: 150px;
+  margin-top: -55px;
   opacity: 0;
   height: 300px;
 }
@@ -59,7 +115,7 @@ h1, h2, h3 {
 
 }
 #personalDatos{
-  background-image: url("marco-mediano.png");
+  background-image: url("imagenes/marco-mediano.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -70,13 +126,8 @@ h1, h2, h3 {
 .personalDatos{
   
 }
-#cabezeraSombra {
-  width: 100%;
-  height: 100px;
-}
-
-
 #perfil{
+  margin-top: 20px;
   opacity: 0;
 }
 #perfilTitulo{
@@ -86,7 +137,8 @@ h1, h2, h3 {
   
 }
 #educacion{
-  background-image: url("marco-sin-derecha.png");
+  margin-top: 20px;
+  background-image: url("imagenes/marco-sin-derecha\ \(1\).png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -94,10 +146,21 @@ h1, h2, h3 {
   margin-left: 5%;
   opacity: 0;
 }
-.educacionTitulo{
+.decorarTitulo{
   display: inline-block;
-  border-bottom: 10px solid transparent;
-  border-image: url('marco-chico.png') 10 stretch;
+  background-image: url("imagenes/barra\ \(1\).png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 10px;
+}
+.decorarTexto{
+  display: inline-block;
+  background-image: url("imagenes/barra\ \(1\).png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 5px;
 }
 .educacionSubTitulo{
   
@@ -106,37 +169,46 @@ h1, h2, h3 {
   
 }
 #experiencia{
-  background-image: url("marco-sin-derecha2.png");
+  background-image: url("imagenes/marco-sin-derecha2\ \(1\).png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 95%;
   margin-left: 4%;
   opacity: 0;
+  margin-top: -30px;
+  margin-bottom: 20px;
 }
 #experienciaTitulo{
   display: inline-block;
-  border-bottom: 10px solid transparent;
-  border-image: url('marco-chico.png') 10 stretch;
 }
 #proyectos{
-  background-image: url("marco-mediano.png");
+  margin-top: 20px;
+  background-image: url("imagenes/marco-mediano.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   display: inline-block;
   height: 170px;
   opacity: 0;
+  padding-top: 10px;
+  margin-bottom: 20px;
 }
 .proyectosLista{
   
 }
 .proyectosLink{
-  display: inline-block;
+  
+  
 }
 .proyectosLink:hover{
-  border-bottom: 10px solid transparent;
-  border-image: url('marco-chico.png') 10 stretch;
+  cursor: pointer;
+  display: inline-block;
+  background-image: url("imagenes/barra\ \(1\).png");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding-bottom: 5px;
 }
 #herramientasTitulo{
   opacity: 0;
@@ -150,6 +222,8 @@ h1, h2, h3 {
   height: 500px;
   margin-left: -10px;
   opacity: 0;
+  margin-bottom: 40px;
+  margin-top: 20px;
 }
 #herramientasContenedorIzq{
   left: 0px;
@@ -157,7 +231,7 @@ h1, h2, h3 {
   width: 37%;
 }
 #herramientasListaIzq{
-  background-image: url("marco-triple-izq.png");
+  background-image: url("imagenes/marco-triple-izq.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -170,7 +244,7 @@ h1, h2, h3 {
   width: 37%;
 }
 #herramientasListaMed{
-  background-image: url("marco-triple-med.png");
+  background-image: url("imagenes/marco-triple-med.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -182,7 +256,7 @@ h1, h2, h3 {
   width: 37%;
 }
 #herramientasListaDer{
-  background-image: url("marco-triple-der.png");
+  background-image: url("imagenes/marco-triple-der.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -191,16 +265,27 @@ h1, h2, h3 {
 #herramientasTitulo{
 
 }
-#pie{
-  background-image: url("pie.png");
+#github{
+  background-image: url("imagenes/pie.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   margin-left: -10px;
   width: 100%;
   opacity: 0;
+  margin-bottom: 303px;
 }
-
+#final{
+  top: 2790px;
+}
+#finalIzq{
+  display: inline-block;
+  width: 150px;
+}
+#finalDer{
+  display: inline-block;
+  width: 150px;
+}
 
 /*
 cielo

@@ -10,44 +10,46 @@
 </head>
 
 <body class="text-center">
-  <div id="contenedor" class="mx-auto">
-    
+  <div id="contenedor" class="mx-auto position-relative">
     <div id="cabezera" class="d-flex position-fixed align-items-center position-relative">
-      <h1 id="inicio" class="w-100">inicio</h1>
-      <nav class="navbar .navbar-expand-md.">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header">
-              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Perfil</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Educacion</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Experiencia</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Proyectos</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <div id="seccionCaja" class="w-100">
+        <ul id="seccion" class="navbar-nav w-100">
+          <li>
+            <h1 id="botonInicio" class="seccionElemento" data-seccion="0" data-nombre="inicio">Inicio</h1>
+          </li>
+          <li>
+            <h1 id="botonPersonal" class="seccionElemento" data-seccion="1" data-nombre="personal">Personal</h1>
+          </li>
+          <li>
+            <h1 id="botonPerfil" class="seccionElemento" data-seccion="2" data-nombre="perfil">Perfil</h1>
+          </li>
+          <li>
+            <h1 id="botonEducacion" class="seccionElemento" data-seccion="3" data-nombre="educacion">Educacion</h1>
+          </li>
+          <li>
+            <h1 id="botonExperiencia" class="seccionElemento" data-seccion="4" data-nombre="experiencia">Experiencia</h1>
+          </li>
+          <li>
+            <h1 id="botonHerramientas" class="seccionElemento" data-seccion="5" data-nombre="herramientas">Herramientas</h1>
+          </li>
+          <li>
+            <h1 id="botonProyectos" class="seccionElemento" data-seccion="6" data-nombre="proyectos">Proyectos</h1>
+          </li>
+        </ul>
+      </div>
+      <div id="botonBarra" class="position-absolute"></div>
+      <div id="cerrarBarra" class="position-absolute X"></div>
     </div>
     <div id="sombra" class="position-fixed"></div>
-    <div id="personal" class="mb-2">
-      <h2 id="personalTitulo" class="">Informacion personal</h2>
+
+    <div id="inicio">
+      <img  class="w-100" src="imagenes/inicio.png" alt="">
+      <h6 id="inicioIzq"></h6>
+      <h6 id="inicioDer"></h6>
+    </div>
+
+    <div id="personal" class="">
+      <h2 id="personalTitulo" class="decorarTitulo">Informacion personal</h2>
       <div id="personalDatos" class="d-flex flex-wrap align-items-center justify-content-center">
         <h5 class="personalDatos">Nombre: Veron Agustin Ivan</h5>
         <h5 class="personalDatos">Nacimiento: 15/05/2000</h5>
@@ -56,31 +58,34 @@
         <h5 class="personalDatos">E-Mail: agusivanveron@hotmail.com</h5>
       </div>
     </div>
-    <div id="perfil" class="my-2">
-      <h2 id="perfilTitulo">perfil</h2>
+
+    <div id="perfil" class="">
+      <h2 id="perfilTitulo" class="decorarTitulo">perfil</h2>
       <h5 id="perfilInfo" class="">
         <span>Tengo un emprendimiento de ventas de comida dietetica, y estoy en busca de un nuevo trabajo. </span><br>
         <span>Actualmente estoy aprendiendo a usar React con github pages como frontend, Render como backend y Supabase como base de datos.</span> <br>
         <span>Me considero una persona responsable y ordenada.</span><br>
       </h5>
     </div>
-    <div id="educacion" class="py-4 my-2">
-      <h3 class="educacionTitulo">educacion</h3>
+
+    <div id="educacion" class="py-4">
+      <h3 class="educacionTitulo decorarTitulo">educacion</h3>
       <h5 class="educacionSubTitulo">Facultad de Informática (unlp)</h5>
-      <span class="educacionDatos">(en curso)</span><br>
+      <span class="educacionDatos decorarTexto">en curso</span><br>
       <p class="educacionDatos">Analista en sistemas.</p>
       <h5 class="educacionSubTitulo">Escuela de Educación Secundaria N°74</h5>
-      <span class="educacionDatos">(completo)</span><br>
+      <span class="educacionDatos X">completo</span><br>
       <p class="educacionDatos">Bachiller con orientación en Arte/Música.</p>
       <h5 class="educacionSubTitulo">Épica sapem </h5>
-      <span class="educacionDatos">(completo)</span><br>
+      <span class="educacionDatos X">completo</span><br>
       <p class="educacionDatos">Full Stack Developer FrontEnd y BackEnd</p>
       <h5 class="educacionSubTitulo">Facultad de ciencias economicas (uba)</h5>
-      <span class="educacionDatos">(completo)</span><br>
+      <span class="educacionDatos X">completo</span><br>
       <span class="educacionDatos">python developer junior</span>
     </div>
-    <div id="experiencia" class="py-4 my-2">
-      <h2 id="experienciaTitulo">experiencia</h2>
+
+    <div id="experiencia" class="decorarTitulo py-4">
+      <h2 id="experienciaTitulo" class="decorarTitulo">experiencia</h2>
       <h5 class="experienciaSubTitulos">peon de fletes</h5>
       <p class="experienciaDatos">ayudante en carga y descarga de objetos fragiles y pesados</p>
       <h5 class="experienciaSubTitulos">masajista</h5>
@@ -91,25 +96,9 @@
       <span class="experienciaDatos">Atención a Clientes personalmente</span><br>
       <span class="experienciaDatos">Mantenimiento y seguimiento de Stock y logística</span>
     </div>
-    <div id="proyectos" class="py-3 px-3 my-2">
-      <h2 class="proyectosTitulo">lista de proyectos</h2>
-      <div class="proyectosLista">
-        <div>
-          <h5 class="proyectosLink" href="https://agusiv.github.io/tuMix/" target="_blank">tumix</h5>
-        </div>
-        <div>
-          <h5 class="proyectosLink" href="https://agusiv.github.io/ejercicio/" target="_blank">ejercicio</h5>
-        </div>
-        <div>
-            <h5 class="proyectosLink" href="https://agusiv.github.io/accesorios/" target="_blank">accesorios</h5>
-        </div>
-        
-        
-      
-      </div>
-    </div>
-    <div id="herramientas" class="py-2 my-2 position-relative">
-      <h2 id="herramientasTitulo" class="">herramientas</h2>
+
+    <div id="herramientas" class="py-2 position-relative">
+      <h2 id="herramientasTitulo" class="decorarTitulo">herramientas</h2>
       <div id="herramientasContenedorIzq" class="position-absolute">
         <h5 class="herramientasSubTitulo">nivel basico</h5>
         <div id="herramientasListaIzq" class="pt-2">
@@ -146,22 +135,36 @@
         </div>
       </div>
     </div>
+
+    <div id="proyectos" class="px-3">
+      <h2 class="proyectosTitulo decorarTitulo">lista de proyectos</h2>
+      <div class="proyectosLista">
+        <div>
+          <h5 class="proyectosLink" href="https://agusiv.github.io/tuMix/" target="_blank">tumix</h5>
+        </div>
+        <div>
+          <h5 class="proyectosLink" href="https://agusiv.github.io/ejercicio/" target="_blank">ejercicio</h5>
+        </div>
+        <div>
+            <h5 class="proyectosLink" href="https://agusiv.github.io/accesorios/" target="_blank">accesorios</h5>
+        </div>
+        
+        
       
-    <footer id="pie" class="py-3 mt-2">
+      </div>
+    </div>
+
+    <div id="github" class="py-3">
       <h6>link de github: https://github.com/agusIV</h6>
+    </div>
+
+    <footer id="final" class="position-absolute">
+      <img class="w-100" src="imagenes/ussop.png" alt="">
+      <h6 id="finalIzq"></h6>
+      <h6 id="finalDer"></h6>
     </footer>
+
   </div>
-  
-  
-
-  
-
-  
-
-  
-  
-  
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
